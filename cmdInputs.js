@@ -1,0 +1,1 @@
+console.log(typeof process.argv[2] + typeof process.argv[3]);
