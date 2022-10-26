@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: hello-two
+  name: hello-two
+  namespace: default
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app:  hello-two
+  template:
+    metadata:
+      labels:
+        app:  hello-two
+    spec:
+      containers:
+      - image:  in28min/hello-two:0.0.1.RELEASE
+        name: hello-two
