@@ -6,7 +6,11 @@ const connection = async () => {
     try {
         await client.connect();// waiting untill connection in established.
         const collection = client.db('node_3').collection('employee');
-        await collection.insertOne({name:'Yashwanth', city : 'GUntur', course:'Nodejs' });
+        const findResultInitial = await collection.findOne({name:'Yashwanth123'});
+        if (findResultInitial === null || findResultInitial === undefined) {
+            await collection.insertOne({name:'Yashwanth123', city : 'GUntur', course:'Nodejs' });
+        } 
+        
         const findResult = await collection.findOne({name:'Yashwanth'});
         await collection.updateOne({name:'Yashwanth'}, {$set:{city:'Vijaywada'}});
         const findResultAfterUpd = await collection.findOne({name:'Yashwanth'});
