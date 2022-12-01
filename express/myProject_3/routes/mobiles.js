@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/mobiles', function(req, res, next) {
-  res.render('mobiles', { title: 'Samsung Mobile' , model:'Galaxy S22'});
+  res.render('mobiles', { title: 'Samsung Mobile' , model:'Galaxy S23'});
 });
 
 module.exports = router;
