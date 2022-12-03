@@ -24,6 +24,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.get('/mobiles', mobileRouter);
 app.get('/getData', mongoOperations);
+app.get('/getSpecificData',mongoOperations);
+app.get('/getDataByParam/:param/:city',mongoOperations);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
