@@ -25,7 +25,9 @@ app.use('/users', usersRouter);
 app.get('/mobiles', mobileRouter);
 app.get('/getData', mongoOperations);
 app.get('/getSpecificData',mongoOperations);
-app.get('/getDataByParam/:param/:city',mongoOperations);
+app.get('/getDataByParam/:college/:city',mongoOperations);
+app.post('/addData',mongoOperations);
+app.put('/updateData', mongoOperations);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
