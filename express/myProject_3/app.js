@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const mobileRouter = require('./routes/mobiles');
 const mongoOperations = require('./routes/mongoOperations');
+const addData = require('./routes/addData.js');
 var app = express();
 
 // view engine setup
@@ -28,6 +29,8 @@ app.get('/getSpecificData',mongoOperations);
 app.get('/getDataByParam/:college/:city',mongoOperations);
 app.post('/addData',mongoOperations);
 app.put('/updateData', mongoOperations);
+app.get('/openForm', addData);
+app.post('/addNewData', addData);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
