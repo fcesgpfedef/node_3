@@ -8,8 +8,8 @@
     }
 </style>
 
-
-<table>
+<form method="GET" id="form" action="/getDataToBeUpdated">
+  <table>
     <tr>
        <th>name</th>
        <th>city</th>
@@ -23,8 +23,10 @@
        <td><%= data[i].city %></td>
        <td><%= data[i].course %></td>
        <td><%= data[i].college %></td>
+       <td><button name="update" value="<%= data[i].name %>">Update</button> </td>
      </tr>    
     <% } %>
  </table>
+</form>
 
  <a href="/openForm">Add New Data </a>
