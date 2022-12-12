@@ -11,6 +11,8 @@ router.post('/addNewData', async function(req, res, next) {
     const postedData = req.body;
     try {
         // const insertResult = await (await collection).insertOne(postedData);
+        //  code to findone
+
         const insertResult = collection.then(async collection => {
             await collection.insertOne(postedData);
             const data = await collection.find().toArray();

@@ -10,6 +10,7 @@ const mobileRouter = require('./routes/mobiles');
 const mongoOperations = require('./routes/mongoOperations');
 const addData = require('./routes/addData.js');
 const updateData = require('./routes/updateData.js');
+const deleteData = require('./routes/deleteData');
 var app = express();
 
 // view engine setup
@@ -34,6 +35,7 @@ app.get('/openForm', addData);
 app.post('/addNewData', addData);
 app.get('/getDataToBeUpdated', updateData);
 app.post('/updateNewData', updateData);
+app.get('/deleteData', deleteData);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
