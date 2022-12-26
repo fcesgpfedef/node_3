@@ -5,6 +5,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/getData', async function(req, res, next) {
     const data = await (await collection).find().toArray();
+    res.cookie('SampleCookie', 'value is express');
     res.render('showData', { data });
 });
 
